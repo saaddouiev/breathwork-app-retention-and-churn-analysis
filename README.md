@@ -92,6 +92,10 @@ Recommendations:
 
 - Close the monthly-vs-annual churn gap with a mid-trial upgrade push. Monthly churns at 55.7% vs. 35.5% for annual. Test a discounted annual-upgrade offer surfaced around day 20-25, just before the cliff.
 
+# Limitations
+
+  This analysis covers trial activation, engagement cadence, and churn attribution. DAU/MAU and MRR were not tracked — the available tables support session-level and subscription-level analysis, not daily active-user or recurring-revenue reporting.
+
 ## Repository Structure
 
 ```
