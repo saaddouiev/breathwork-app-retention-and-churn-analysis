@@ -9,9 +9,9 @@ it a pricing problem or an engagement problem?
 
 ## Data & Architecture
 
-Unlike my other two portfolio projects, which each analyze a single flat transactions table, this one uses a synthetic subscription-app dataset spanning six related source tables across three business processes, trial/activation, usage, and subscription/billing. That relational complexity is what a star schema is for.
+Unlike my other two portfolio projects, which each analyze a single flat transactions table, this one uses a synthetic subscription-app dataset spanning six related source tables across three business processes, trial/activation, usage, and subscription/billing. That relational complexity asks for a star schema here.
 
-Raw source tables are cleaned and modeled directly into 2 fact tables sharing 3 dimensions:
+Raw source tables were cleaned and modeled directly into 2 fact tables sharing 3 dimensions:
 
 <img width="2399" height="2316" alt="data_model" src="https://github.com/user-attachments/assets/284f11a0-2e74-4e2c-a9c0-247bffd17014" />
 
