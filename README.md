@@ -69,7 +69,7 @@ best and worst channel. Referral and organic outperform every paid channel.
 
 Monthly churn sits at 55.7% vs. 35.5% for annual. This could reflect lower
 switching friction on monthly, or a selection effect where annual buyers are
-already more committed at signup — the data here can't distinguish the two.
+already more committed at signup, the data here can't distinguish the two.
 
 ## So What
 
