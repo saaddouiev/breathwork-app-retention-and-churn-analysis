@@ -73,7 +73,7 @@ already more committed at signup, the data here can't distinguish the two.
 
 ## So What
 
-The insight: **channels that bring in lower-intent users (paid_social)
+**Channels that bring in lower-intent users (paid_social)
 convert worse at trial, and the users who do convert but never escalate past
 ~1.4–1.5 sessions/week are the same ones who later cancel citing "not using
 enough" rather than price** and the point where that shows up as churn is
@@ -89,7 +89,9 @@ Recommendations:
 
 # Limitations
 
-  This analysis covers trial activation, engagement cadence, and churn attribution. DAU/MAU and MRR were not tracked — the available tables support session-level and subscription-level analysis, not daily active-user or recurring-revenue reporting.
+- New user signups are concentrated in a fixed window in this synthetic dataset rather than continuing indefinitely. Because of that, platform-wide DAU/MAU trends toward zero by late 2025 as the original cohort winds down with nothing replacing it. This is an artifact of how the data was generated, not a real business trend, so any DAU/MAU reporting should be read cohort-relative (time since signup) rather than as a calendar-time trend.
+  
+- Data is synthetic. Patterns are designed to mimic real behavior but aren't drawn from real users.
 
 ## Repository Structure
 
