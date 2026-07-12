@@ -15,9 +15,13 @@ Raw source tables are cleaned and modeled directly into 2 fact tables sharing 3 
 
 <img width="2399" height="2316" alt="data_model" src="https://github.com/user-attachments/assets/284f11a0-2e74-4e2c-a9c0-247bffd17014" />
 
-**Tools:** PostgreSQL + matplotlib only — no BI tool for this one. Static charts
-suited this project because the deliverable is a small set of one-shot,
-narrative visuals rather than something a stakeholder needs to filter or drill-through.
+| Table | Grain |
+| :--- | :--- |
+| `fact_engagement` | One row per content interaction (sessions with no interaction are kept as placeholder rows, so no activity is silently dropped) |
+| `fact_subscription` | One row per subscription (not per user — ~11% of users have held more than one subscription over time) |
+| `dim_user` | One row per user |
+| `dim_content` | One row per piece of content |
+| `dim_date` | One row per calendar date |
 
 ## Key Findings
 
