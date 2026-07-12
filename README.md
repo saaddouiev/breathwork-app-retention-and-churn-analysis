@@ -1,9 +1,6 @@
 # Breathwork App: Activation, Engagement & Churn Analysis
 
-A SQL-only analysis of a subscription breathwork app (synthetic data) tracing the
-path from **acquisition channel -> trial engagement -> churn**, built on a small
-medallion-style layer (raw ->  staging ->  mart) in PostgreSQL, with matplotlib for
-every chart.
+A SQL-only analysis of a subscription breathwork app (synthetic data), tracing the path from acquisition channel → trial engagement → churn. Built entirely in PostgreSQL, with matplotlib for every chart.
 
 ## The Question
 
@@ -12,19 +9,11 @@ it a pricing problem or an engagement problem?
 
 ## Data & Architecture
 
-Three layers, one schema (`breathwork_app_schema`):
+Unlike my other two portfolio projects, which each analyze a single flat transactions table, this one uses a synthetic subscription-app dataset spanning six related source tables across three business processes, trial/activation, usage, and subscription/billing. That relational complexity is what a star schema is for.
 
-- **Raw** source event/table ingestion (users, sessions, content interactions,
-  subscriptions, payments)
-- **Staging** (`stg_users`, `stg_sessions`, `stg_content_interactions`,
-  `stg_subscriptions`, `stg_payments`): cleaned, typed, one grain per table
-- **Mart** — business-logic views, one per analytical theme:
-  - `mart_user_activation`: trial signup -> conversion, first-session behavior,
-    sessions during trial
-  - `mart_engagement`: content interaction log joined to user attributes;
-    feeds the weekly cohort and churned-user engagement queries
-  - `mart_churn`: subscription-level status, plan, cancellation reason,
-    revenue
+Raw source tables are cleaned and modeled directly into 2 fact tables sharing 3 dimensions:
+
+<img width="2399" height="2316" alt="data_model" src="https://github.com/user-attachments/assets/284f11a0-2e74-4e2c-a9c0-247bffd17014" />
 
 **Tools:** PostgreSQL + matplotlib only — no BI tool for this one. Static charts
 suited this project because the deliverable is a small set of one-shot,
