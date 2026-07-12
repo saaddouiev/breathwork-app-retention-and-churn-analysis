@@ -17,8 +17,8 @@ Raw source tables are cleaned and modeled directly into 2 fact tables sharing 3 
 
 | Table | Grain |
 | :--- | :--- |
-| `fact_engagement` | One row per content interaction (sessions with no interaction are kept as placeholder rows, so no activity is silently dropped) |
-| `fact_subscription` | One row per subscription (not per user — ~11% of users have held more than one subscription over time) |
+| `fact_engagement` | One row per content interaction (sessions with no interaction are kept as empty rows, so no activity is accidentally dropped) |
+| `fact_subscription` | One row per subscription (not per user because 11% of users have held more than one subscription over time) |
 | `dim_user` | One row per user |
 | `dim_content` | One row per piece of content |
 | `dim_date` | One row per calendar date |
