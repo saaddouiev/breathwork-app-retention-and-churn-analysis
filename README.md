@@ -25,30 +25,32 @@ Raw source tables were cleaned and modeled directly into 2 fact tables sharing 3
 
 ## Key Findings
 
-### 1. Churn reads as an engagement problem, not a pricing problem
+### 1. Churn comes from an engagement problem, not a pricing problem
 
 <img width="2967" height="1469" alt="04_cancellation_reasons" src="https://github.com/user-attachments/assets/d4059359-0d75-4b4d-bde3-90cca48d2aa2" />
 
-`not_using_enough` (6,273 users) is nearly 2x the count of `too_expensive`
-(3,808), well ahead of `found_alternative` (2,825) and `no_reason_given`
-(2,765). Price is a real factor, but it isn't the dominant one — usage drop-off
+
+not_using_enough (6,273 users) is nearly 2x the count of too_expensive
+(3,808), well ahead of found_alternative (2,825) and no_reason_given
+(2,765). Price is a real factor, but it isn't the dominant one, usage drop-off
 is.
 
-### 2. The retention cliff is steepest between week 4 and month 3
+
+### 2. The retention drop is steepest between week 4 and month 3
 
 <img width="2970" height="1469" alt="02_retention_curve" src="https://github.com/user-attachments/assets/fadc2868-3038-4657-ad34-9ec353e718c3" />
 
-Cohort retention: 100% (week 1) → 82% (week 4) → 47% (month 3) → 15% (month 6).
-The first month holds up reasonably well; the real collapse (82% → 47%, a
+Cohort retention: 100% (week 1) -> 82% (week 4) -> 47% (month 3) -> 15% (month 6).
+The first month holds up reasonably well; the real collapse (82% -> 47%, a
 35-point drop) happens between week 4 and month 3 — that's the window where
 this business is losing the most people.
 
-### 3. Churned users never build a habit — they plateau at ~1.4 sessions/week
+### 3. Churned users never build a habit, they stagnate at ~1.4 sessions/week
 
 <img width="3570" height="1470" alt="03_engagement_trajectory" src="https://github.com/user-attachments/assets/04066fac-3f0a-4b72-bd57-4a94b294b107" />
 
 Tracked monthly from Jan 2024–Dec 2025, churned users' average sessions/week
-hover in a tight band (~1.1–1.7) around a ~1.4 plateau for the entire window —
+hover in a tight band (~1.1–1.7) around a ~1.4 plateau for the entire window, 
 never breaking past ~1.5. This is consistent with #1: usage stagnation is
 visible as an ongoing pattern, not just a symptom that shows up right before
 cancellation.
@@ -58,7 +60,7 @@ cancellation.
 <img width="2970" height="1468" alt="05_conversion_by_channel" src="https://github.com/user-attachments/assets/f8b160b0-860d-4eb9-98a6-5771784d57ac" />
 
 Trial-to-paid conversion ranges from 62.9% (referral) and 60.0%
-(organic_search) down to 46.2% (paid_social) — a 16.7-point gap between the
+(organic_search) down to 46.2% (paid_social), a 16.7-point gap between the
 best and worst channel. Referral and organic outperform every paid channel.
 
 ### 5. Monthly plans churn 20 points higher than annual
@@ -74,16 +76,16 @@ already more committed at signup — the data here can't distinguish the two.
 The insight: **channels that bring in lower-intent users (paid_social)
 convert worse at trial, and the users who do convert but never escalate past
 ~1.4–1.5 sessions/week are the same ones who later cancel citing "not using
-enough" rather than price** — and the point where that shows up as churn is
+enough" rather than price** and the point where that shows up as churn is
 mainly around the month 1 to month 3 window.
 
 Recommendations:
 
-- Reallocate acquisition spend away from paid_social. Referral converts trial-to-paid at 62.9% vs. 46.2% for paid_social — a 16.7-point gap. Pull trial volume by channel next to size this in actual users before shifting budget, but the direction is clear.
+- Pull acquisition spend out of paid_social. It converts trial to paid at 46.2% vs. 62.9% for referral, and even users who do convert retain worse (31.1% vs. 47.7% at month 3). This is a channel quality problem, not a trial-experience one.
 
-- Retention spend should go to engagement, not discounts. Not_using_enough causes 65% more cancellations than too_expensive (6,273 vs. 3,808). Kill or shrink price-led win-back offers; build a habit-formation push — content recommendations, streak nudges — targeted at the week-4-to-month-3 window, where retention falls from 82% to 47%.
+- Retention spend should go to engagement, not discounts. Not_using_enough causes 65% more cancellations than too_expensive (6,273 vs. 3,808). Kill or shrink price-led win-back offers; build a habit-formation push: content recommendations, streak nudges, targeted at the week-4-to-month-3 window, where retention falls from 82% to 47%.
 
-- Close the monthly-vs-annual churn gap with a mid-trial upgrade push. Monthly churns at 55.7% vs. 35.5% for annual. Test a discounted annual-upgrade offer surfaced around day 20-25, just before the cliff.
+- Attack the monthly vs. annual churn gap with a mid-trial upgrade push. Monthly churns at 55.7%, annual at 35.5%. Test a discounted annual upgrade offer around day 20 to 25, right before users hit the cliff.
 
 # Limitations
 
